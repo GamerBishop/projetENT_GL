@@ -1,0 +1,3 @@
+class Enseignant : Personne
+{
+};
