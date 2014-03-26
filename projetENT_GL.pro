@@ -13,7 +13,8 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    consulteplanning.cpp
 
 HEADERS  += mainwindow.h \
     Cours.h \
@@ -28,6 +29,8 @@ HEADERS  += mainwindow.h \
     Salle.h \
     TypeGroupe.h \
     TypeSalle.h \
-    UniteEnseignement.h
+    UniteEnseignement.h \
+    consulteplanning.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    consulteplanning.ui
