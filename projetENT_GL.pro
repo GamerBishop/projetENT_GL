@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,8 +14,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    consulteplanning.cpp
+    mainwindow.cpp \
+    consulteplanning.cpp \
+    BDD.cpp \
+
 
 HEADERS  += mainwindow.h \
     Cours.h \
@@ -30,7 +33,9 @@ HEADERS  += mainwindow.h \
     TypeGroupe.h \
     TypeSalle.h \
     UniteEnseignement.h \
-    consulteplanning.h
+    consulteplanning.h\
+    BDD.h \
+	
 
 FORMS    += mainwindow.ui \
     consulteplanning.ui
