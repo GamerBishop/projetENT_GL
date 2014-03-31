@@ -14,8 +14,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp\
-        BDD.cpp
+    mainwindow.cpp \
+    consulteplanning.cpp \
+    BDD.cpp \
+    ihm_choixprof.cpp \
+    ihm_consulterreservations.cpp \
+    ihm_creerreservationchoixequipement.cpp \
+    ihm_creerreservationchoixsalle.cpp \
+    ihm_creerreservationequipement.cpp \
+    ihm_creerreservationequipementSU.cpp
+
 
 HEADERS  += mainwindow.h \
     Cours.h \
@@ -31,7 +39,21 @@ HEADERS  += mainwindow.h \
     TypeGroupe.h \
     TypeSalle.h \
     UniteEnseignement.h \
+    consulteplanning.h\
     BDD.h \
+    ihm_choixprof.h \
+    ihm_consulterreservations.h \
+    ihm_creerreservationchoixequipement.h \
+    ihm_creerreservationchoixsalle.h \
+    ihm_creerreservationequipement.h \
+    ihm_creerreservationequipementSU.h
+	
 
-
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    consulteplanning.ui \
+    ihm_choixprof.ui \
+    ihm_consulterreservations.ui \
+    ihm_creerreservationchoixequipement.ui \
+    ihm_creerreservationchoixsalle.ui \
+    ihm_creerreservationequipement.ui \
+    ihm_creerreservationequipementSU.ui
