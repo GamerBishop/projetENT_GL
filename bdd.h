@@ -4,15 +4,15 @@
 #include <QApplication>
 #include <QSqlDatabase>
 #include <QSqlError>
+#include <QSqlQuery>
 #include <QMessageBox>
-#include <QArray>
+#include <QVector>
 
-class BDD
+class BDD:public QObject
 {
 Q_OBJECT
 public:
-    explicit BDD(QString nomDB, QString login, QString mdp);
-    ~BDD();
+    explicit BDD(QString host, QString nomDB, QString login, QString mdp);
     QSqlDatabase db;
     QVector<QString> request(QString requete);
 
