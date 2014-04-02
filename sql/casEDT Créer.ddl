@@ -1,5 +1,5 @@
 CREATE TABLE Prof_UniteEnseignement (PersonneID int4 NOT NULL, UniteEnseignementID int4 NOT NULL, PRIMARY KEY (PersonneID, UniteEnseignementID));
-CREATE TABLE ReservationEquipement (ID  SERIAL NOT NULL, "Date" date NOT NULL, Heure time NOT NULL, Duree interval NOT NULL, EquipementID int4 NOT NULL, PersonneID int4 NOT NULL, PRIMARY KEY (ID));
+CREATE TABLE ReservationEquipement (ID  SERIAL NOT NULL, Date date NOT NULL, Heure time NOT NULL, Duree interval NOT NULL, EquipementID int4 NOT NULL, PersonneID int4 NOT NULL, PRIMARY KEY (ID));
 CREATE TABLE Prof_Cours (CoursID int4 NOT NULL, PersonneID int4 NOT NULL, PRIMARY KEY (CoursID, PersonneID));
 CREATE TABLE UniteEnseignement_Cours (UniteEnseignementID int4 NOT NULL, CoursID int4 NOT NULL, PRIMARY KEY (UniteEnseignementID, CoursID));
 CREATE TABLE typeCours (ID  SERIAL NOT NULL, libelle varchar(255) NOT NULL UNIQUE, PRIMARY KEY (ID));
@@ -9,7 +9,7 @@ CREATE TABLE TypeSalle (ID  SERIAL NOT NULL, libelle varchar(255) NOT NULL UNIQU
 CREATE TABLE TypeGroupe (ID  SERIAL NOT NULL, libelle varchar(255) NOT NULL UNIQUE, PRIMARY KEY (ID));
 CREATE TABLE Cours_Groupe (CoursID int4 NOT NULL, GroupeID int4 NOT NULL, PRIMARY KEY (CoursID, GroupeID));
 CREATE TABLE Groupe_Personne (GroupeID int4 NOT NULL, PersonneID int4 NOT NULL, PRIMARY KEY (GroupeID, PersonneID));
-CREATE TABLE Cours (ID  SERIAL NOT NULL, "date" date NOT NULL, HeureDebut time NOT NULL, Duree interval NOT NULL, SalleID int4 NOT NULL, typeCoursID int4 NOT NULL, PRIMARY KEY (ID));
+CREATE TABLE Cours (ID  SERIAL NOT NULL, date date NOT NULL, HeureDebut time NOT NULL, Duree interval NOT NULL, SalleID int4 NOT NULL, typeCoursID int4 NOT NULL, PRIMARY KEY (ID));
 CREATE TABLE Equipement (ID  SERIAL NOT NULL, Libelle varchar(255) NOT NULL, TypeEquipement int4 NOT NULL, Commentaire varchar(255), Etat int4 NOT NULL, CommentaireEtat varchar(255), PRIMARY KEY (ID));
 CREATE TABLE Salle (ID  SERIAL NOT NULL, Batiment varchar(255) NOT NULL, NumSalle varchar(255) NOT NULL, Capacite int4 NOT NULL, TypeSalle int4 NOT NULL, PRIMARY KEY (ID));
 CREATE TABLE UniteEnseignement (ID  SERIAL NOT NULL, Nom varchar(255) NOT NULL UNIQUE, ModuleID int4 NOT NULL, PRIMARY KEY (ID));

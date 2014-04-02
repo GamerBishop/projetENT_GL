@@ -11,6 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = projetENT_GL
 TEMPLATE = app
+QMAKE_CXXFLAGS += -std=c++1y
 
 SOURCES += main.cpp\
     mainwindow.cpp \
@@ -21,7 +22,8 @@ SOURCES += main.cpp\
     ihm_creerreservationchoixequipement.cpp \
     ihm_creerreservationchoixsalle.cpp \
     ihm_creerreservationequipement.cpp \
-    ihm_creerreservationequipementSU.cpp
+    ihm_creerreservationequipementSU.cpp \
+    ConsulterReservation2AllUsers.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -45,7 +47,8 @@ HEADERS  += mainwindow.h \
     ihm_creerreservationchoixequipement.h \
     ihm_creerreservationchoixsalle.h \
     ihm_creerreservationequipement.h \
-    ihm_creerreservationequipementSU.h
+    ihm_creerreservationequipementSU.h \
+    ConsulterReservation2AllUsers.h
 	
 
 FORMS    += mainwindow.ui \
@@ -55,4 +58,5 @@ FORMS    += mainwindow.ui \
     ihm_creerreservationchoixequipement.ui \
     ihm_creerreservationchoixsalle.ui \
     ihm_creerreservationequipement.ui \
-    ihm_creerreservationequipementSU.ui
+    ihm_creerreservationequipementSU.ui \
+    ConsulterReservation2AllUsers.ui

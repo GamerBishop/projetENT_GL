@@ -7,6 +7,7 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 #include <QVector>
+#include <QDateTime>
 
 class BDD:public QObject
 {
@@ -15,7 +16,7 @@ public:
     explicit BDD(QString host, QString nomDB, QString login, QString mdp);
     QSqlDatabase db;
     bool Connexion(QString login, QString password);
-    QVector<QVector<QString> >SelectReservationsParDateEtSalle(QString batiment,QString numsalle, QString date);
+    QString SelectReservationsParDateEtSalle(QString batiment,QString numsalle, QString date);
 
 };
 
