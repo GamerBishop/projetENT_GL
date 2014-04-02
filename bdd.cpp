@@ -17,18 +17,79 @@ BDD::BDD(QString host, QString nomDB, QString login, QString mdp)
           }
     }
 
-QVector<QString> BDD::request(QString requete)
+
+
+
+bool BDD::Connexion(QString login, QString password)
 {
-    QVector<QString> result;
     QSqlQuery requeteur;
-    requeteur.exec(requete);
-    while(requeteur.next())
-       {
-        result.append(requeteur.value(1).toString());
-       }
-    return result;
-
-
+    requeteur.prepare("Select login, password "
+                     "from Personne"
+                      "where login=:login AND mdp=:password");
+    requeteur.bindValue(":login",login);
+    requeteur.bindValue(":password",password);
+    requeteur.exec();
+    if(requeteur.size()==0)
+        return false;
+    return true;
 }
 
+QVector<QVector<QString> > BDD::SelectReservationsParDateEtSalle(QString batiment,QString numsalle, QString date)
+{
+    QVector<QVector<QString> > result;
+    QVector<QString> idCours;
+    QSqlQuery requeteur;
+    requeteur.prepare("Select c.heuredebut, c.heuredebut+c.duree, t.libelle, c.id"
+                   "from cours c"
+                   "join typecours t on t.id=c.typecoursid"
+                   "where c.salleid=(Select id from salle where batiment=:batiment AND numsalle=:numsalle)"
+                   "AND date=:date");
+    requeteur.bindValue(":batiment",batiment);
+    requeteur.bindValue(":numsalle",numsalle);
+    requeteur.bindValue(":date",date);
+    requeteur.exec();
+    int i=0;
+    while(requeteur.next())
+        {
+            result[i][0]=requeteur.value(0).toString();
+            result[i][1]=requeteur.value(1).toString();
+            result[i][2]=requeteur.value(2).toString();
+            idCours[i]=requeteur.value(3).toString();
+            i++;
+        }
+        // IL N'Y A POUR LE MOMENT QU'UN PROFESSEUR PAR COURS
+        for (i=0;i<idCours.count();i++)
+        {
+
+            requeteur.prepare("Select nom from groupe where id="
+                              "(Select groupeid from cours_groupe where coursid=:id");
+            requeteur.bindValue(":id",idCours[i]);
+            requeteur.exec();
+            while(requeteur.next())
+                {
+                    result[i][3]=requeteur.value(0).toString() + " " + requeteur.value(1).toString() + " - " ;
+                }
+            result[i][3].replace( result[i][3].indexOf("-",-1), ' ' );
+
+
+            requeteur.prepare("Select nom, prenom from personne where id="
+                              "(Select personneid from prof_cours where coursid=:id");
+            requeteur.bindValue(":id",idCours[i]);
+            requeteur.exec();
+            while(requeteur.next())
+                {
+                    result[i][4]=requeteur.value(0).toString() + " " + requeteur.value(1).toString() + " - " ;
+                }
+            result[i][4].replace( result[i][4].indexOf("-",-1), ' ' );
+
+        }
+
+    //result[i][0] = heure de debut
+    //result[i][1] = heure de fin
+    //result[i][2] = nom du cours
+    //result[i][3] = nom DES groupes
+    //result[i][3] = nom DES profs
+
+    return result;
+}
 
