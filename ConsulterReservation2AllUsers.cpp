@@ -15,16 +15,30 @@ ConsulterReservation2AllUsers::ConsulterReservation2AllUsers(BDD *b, QWidget *pa
     QString today_date =  today.toString("ddd d MMMM");
     QString tomor_date =  tomorrow.toString("ddd d MMMM");
 
-    const char* tod = today_date.toStdString().c_str();
-    const char* tom = tomor_date.toStdString().c_str();
-    ui->label_today->setText(ui->label_today->text()+" "+tod+" :");
-    ui->label_next_day->setText(ui->label_next_day->text()+" "+tom+" :");
+    ui->label_today->setText("Aujourd'hui : "+today_date+" :");
+    ui->label_next_day->setText("Demain : "+tomor_date+" :");
 
-    ui->label_2->setText(b->SelectReservationsParDateEtSalle("Pascal","P136","2014-04-17"));
+    ui->label_2->setText(b->SelectReservationsParDateEtSalle("Pascal","P136",today.toString("yyyy-dd-MM")));
+    ui->label_4->setText(b->SelectReservationsParDateEtSalle("Pascal","P136",tomorrow.toString("yyyy-dd-MM")));
 
  }
 
 ConsulterReservation2AllUsers::~ConsulterReservation2AllUsers()
 {
     delete ui;
+}
+
+void ConsulterReservation2AllUsers::on_calendar_clicked(const QDate &date)
+{
+    QDate  today = date;
+    QDate tomorrow = date.addDays(1);
+
+    QString today_date =  today.toString("ddd d MMMM");
+    QString tomor_date =  tomorrow.toString("ddd d MMMM");
+
+    ui->label_today->setText("Aujourd'hui : "+today_date+" :");
+    ui->label_next_day->setText("Demain : "+tomor_date+" :");
+
+    ui->label_2->setText(b->SelectReservationsParDateEtSalle("Pascal","P136",today.toString("yyyy-MM-dd")));
+    ui->label_4->setText(b->SelectReservationsParDateEtSalle("Pascal","P136",tomorrow.toString("yyyy-MM-dd")));
 }

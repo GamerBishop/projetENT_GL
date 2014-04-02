@@ -15,6 +15,9 @@ public:
     explicit ConsulterReservation2AllUsers(BDD *b, QWidget *parent = 0);
     ~ConsulterReservation2AllUsers();
 
+private slots:
+    void on_calendar_clicked(const QDate &date);
+
 private:
     BDD *b;
     Ui::ConsulterReservation2AllUsers *ui;

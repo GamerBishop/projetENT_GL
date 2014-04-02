@@ -12,8 +12,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     BDD* b=new BDD("localhost","EDT","postgres","root");
-    //ConsulterReservation2AllUsers * w = new ConsulterReservation2AllUsers(b);
-    //w->show();
-     QMessageBox::critical(0, QObject::tr("Hugo"), b->SelectReservationsParDateEtSalle("Pascal","P136","2014/04/17"));
+    ConsulterReservation2AllUsers * w = new ConsulterReservation2AllUsers(b);
+    w->show();
     return a.exec();
 }
