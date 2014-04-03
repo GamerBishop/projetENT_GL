@@ -7,13 +7,19 @@ BDD::BDD(QString host, QString nomDB, QString login, QString mdp)
     db.setDatabaseName(nomDB);
     db.setUserName(login);
     db.setPassword(mdp);
-
     if(!db.open())
       {
           QMessageBox::critical(0, QObject::tr("Database Error"), db.lastError().text());
           exit(1);
       }
 }
+
+BDD::BDD()
+    {
+
+    }
+
+
 
 
 bool BDD::Connexion(QString login, QString password)
@@ -236,13 +242,109 @@ QList<QList<QString> > BDD::selectSalleVide(QString date,QString typesalle,QStri
 
     while(requeteur.next())
     {
+        tmpList.clear();
+        tmpList.append(requeteur.value(0).toString());
+        tmpList.append(requeteur.value(1).toString());
+        tmpList.append(requeteur.value(2).toString());
+        tmpList.append(requeteur.value(3).toString());
+        tmpList.append(requeteur.value(4).toString());
+        result.append(tmpList);
+    }
+    return result;
+}
+
+QList<QList<QString>> BDD::SelectAllReservationsProf()
+{
+    QSqlQuery requeteur;
+    QList<QList<QString>> result;
+    QList<QString> tmpList;
+    requeteur.prepare("SELECT tc.libelle, "
+                              "ue.nom, "
+                              "gr.nom, "
+                              "salle.numsalle, "
+                              "salle.batiment, "
+                              "date, "
+                              "heuredebut, "
+                              "duree+heuredebut as heurefin "
+                      "FROM cours, "
+                              "personne, "
+                              "prof_cours, "
+                              "salle, "
+                              "uniteenseignement_cours uecours, "
+                              "uniteenseignement ue, "
+                              "typecours tc, "
+                              "groupe gr, "
+                              "cours_groupe cgr "
+                      "Where personne.login = 'EboueyaM' and "
+                              "personne.id = prof_cours.personneid and "
+                              "cours.id = prof_cours.coursid and "
+                              "cours.id = uecours.coursid and "
+                              "ue.id = uecours.uniteenseignementid and "
+                              "cours.salleid = salle.id and  "
+                              "tc.id = cours.typecoursid and "
+                              "cours.id = cgr.coursid and "
+                              "gr.id=cgr.groupeid;");
+    while(requeteur.next())
+        {
             tmpList.clear();
             tmpList.append(requeteur.value(0).toString());
             tmpList.append(requeteur.value(1).toString());
             tmpList.append(requeteur.value(2).toString());
+            tmpList.append(requeteur.value(3).toString());
+            tmpList.append(requeteur.value(4).toString());
+            tmpList.append(requeteur.value(5).toString());
+            tmpList.append(requeteur.value(6).toString());
+            tmpList.append(requeteur.value(7).toString());
             result.append(tmpList);
-    }
+        }
     return result;
+}
+
+bool BDD::DeleteReservationParDateEtEquipement(QString nomEquipement, QString date)
+{
+    QSqlQuery requeteur;
+    requeteur.prepare("DELETE FROM cours "
+                      "Where Date =:date "
+                      "And equ.libelle=:nomEquipement;");
+    requeteur.bindValue(":date",date);
+    requeteur.bindValue(":nomEquipement",nomEquipement);
+    requeteur.exec();
+    if(requeteur.size()==0)
+        return false;
+    return true;
+}
+
+QString BDD::SelectReservationsParDateEtEquipement(QString nomEquipement, QString date)
+{
+    QList<QList<QString> > result;
+     QList<QString> tmpList;
+    QSqlQuery requeteur;
+    requeteur.prepare("SELECT distinct resa.date, resa.heure, rasa.heure+resa.duree, pers.nom, pers.prenom "
+                      "FROM reservationequipement resa,equipement equ, personne pers "
+                      "Where equ.id=resa.equipementid "
+                      "And pers.id=resa.personneid "
+                      "And equ.libelle=:nomEquipement "
+                      "And resa.date=:date");
+    requeteur.bindValue(":nomEquipement",nomEquipement);
+    requeteur.bindValue(":date",date);
+    while(requeteur.next())
+        {
+            tmpList.clear();
+            tmpList.append(requeteur.value(0).toString());
+            tmpList.append(requeteur.value(1).toString());
+            tmpList.append(requeteur.value(2).toString());
+            tmpList.append(requeteur.value(3).toString());
+            tmpList.append(requeteur.value(4).toString());
+            result.append(tmpList);
+    }            
+
+    QString aEnvoyer="";
+    for(QList<QString> vs : result)
+    {
+
+        aEnvoyer=aEnvoyer+vs.at(0)+" - "+vs.at(1)+"\n"+vs.at(2) +" : "+vs.at(3)+ " | " +vs.at(4)+"\n \n";
+    }
+    return aEnvoyer;
 }
 
 bool BDD::DeleteReservationParDateEtSalle(QString batiment,QString numsalle, QString date)
@@ -358,34 +460,8 @@ void BDD::creerReservationEquipement(QString date, QString hdebut,QString duree,
     requeteur.exec();
 }
 
-QString BDD::SelectReservationsParDateEtEquipement(QString nomEquipement, QString date)
-{
-    QList<QList<QString> > result;
-    QList<QString> tmpList;
-    QSqlQuery requeteur;
-    requeteur.prepare("SELECT distinct resa.date, resa.heure, rasa.heure+resa.duree, pers.nom, pers.prenom "
-                      "FROM reservationequipement resa,equipement equ, personne pers "
-                      "Where equ.id=resa.equipementid "
-                      "And pers.id=resa.personneid "
-                      "And equ.libelle=:nomEquipement "
-                      "And resa.date=:date");
-    requeteur.bindValue(":nomEquipement",nomEquipement);
-    requeteur.bindValue(":date",date);
-    while(requeteur.next())
-    {
-        tmpList.clear();
-        tmpList.append(requeteur.value(0).toString());
-        tmpList.append(requeteur.value(1).toString());
-        tmpList.append(requeteur.value(2).toString());
-        tmpList.append(requeteur.value(3).toString());
-        tmpList.append(requeteur.value(4).toString());
-        result.append(tmpList);
-    }
-    QString aEnvoyer="";
-    for(QList<QString> vs : result)
-    {
 
-        aEnvoyer=aEnvoyer+vs.at(0)+" - "+vs.at(1)+"\n"+vs.at(2) +" : "+vs.at(3)+ " | " +vs.at(4)+"\n \n";
-    }
-    return aEnvoyer;
-}
+
+
+
+

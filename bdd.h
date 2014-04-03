@@ -14,7 +14,7 @@ class BDD:public QObject
 Q_OBJECT
 public:
     explicit BDD(QString host, QString nomDB, QString login, QString mdp);
-    BDD(){}
+    explicit BDD();
     QSqlDatabase db;
     bool Connexion(QString login, QString password);
     bool DeleteReservationParDateEtSalle(QString batiment,QString numsalle, QString date);
@@ -36,10 +36,9 @@ public:
 
     bool isProf();
 
-
-
-
     QString login;
+    bool DeleteReservationParDateEtEquipement(QString nomEquipement, QString date);
+    QList<QList<QString>> SelectAllReservationsProf();
 
 };
 
