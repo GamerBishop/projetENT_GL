@@ -12,7 +12,7 @@ class ConsulterReservation2AllUsers : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ConsulterReservation2AllUsers(BDD *b,QString salle, QString batiment, QWidget *parent = 0);
+    explicit ConsulterReservation2AllUsers(BDD *b,QString salle, QString batiment, QWidget *parent =0);
     ~ConsulterReservation2AllUsers();
 
 private slots:

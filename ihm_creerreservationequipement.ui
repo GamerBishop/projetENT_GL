@@ -113,7 +113,14 @@
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="pushButtonRetour">
+            <property name="text">
+             <string>Retour</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonChoisir">
             <property name="text">
              <string>Choisir</string>
             </property>
@@ -126,28 +133,6 @@
      </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>640</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuSalle">
-    <property name="title">
-     <string>Salle</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_quipement">
-    <property name="title">
-     <string>Équipement</string>
-    </property>
-   </widget>
-   <addaction name="menuSalle"/>
-   <addaction name="menu_quipement"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

@@ -25,7 +25,10 @@ SOURCES += main.cpp\
     ihm_creerreservationequipementSU.cpp \
     ConsulterReservation2AllUsers.cpp \
     creerresevationsalle.cpp \
-    consulterreservation2su.cpp
+    consulterreservation2su.cpp \
+    consulterplanningequipementalluser.cpp \
+    consulterplanningequipementsu.cpp \
+    creerreservationsallesu.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -52,7 +55,12 @@ HEADERS  += mainwindow.h \
     ihm_creerreservationequipementSU.h \
     ConsulterReservation2AllUsers.h \
     creerresevationsalle.h \
-    consulterreservation2su.h
+    consulterreservation2su.h \
+    consulterplanningequipementalluser.h \
+    consulterplanningequipementsu.h \
+    consulterplanningequipementsu.cpp.autosave \
+    consulterplanningequipementsu.h.autosave \
+    creerreservationsallesu.h
 	
 
 FORMS    += mainwindow.ui \
@@ -66,7 +74,10 @@ FORMS    += mainwindow.ui \
     ConsulterReservation2AllUsers.ui \
     consulterPlanning.ui \
     creerresevationsalle.ui \
-    consulterreservation2su.ui
+    consulterreservation2su.ui \
+    consulterplanningequipementalluser.ui \
+    consulterplanningequipementsu.ui \
+    creerreservationsallesu.ui
 
 OTHER_FILES += \
     Drivers (lire readme).zip \
@@ -74,4 +85,6 @@ OTHER_FILES += \
     projetENT_GL.pro.user.1.3 \
     projetENT_GL.pro.user.1de26af \
     projetENT_GL.pro.user.8193733 \
-    README.md
+    README.md \
+    Drivers (lire readme).zip \
+    Drivers (lire readme).zip

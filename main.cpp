@@ -5,6 +5,7 @@
 #include "ConsulterReservation2AllUsers.h"
 #include "consulterreservation2su.h"
 #include "creerresevationsalle.h"
+#include "consulterplanningequipementalluser.h"
 
 #include "IHM_CreerReservationEquipementSU.h"
 #include <QApplication>
@@ -13,8 +14,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //BDD* b=new BDD("10.7.36.4","EDT","postgres","root");
-    ConsulterReservation2SU * w = new ConsulterReservation2SU();
+    BDD* b=new BDD();
+    ConsulterPlanningEquipementAllUser * w = new ConsulterPlanningEquipementAllUser(b,"Ta mere en slip");
     w->show();
     return a.exec();
 }

@@ -2,6 +2,7 @@
 #define IHM_CREERRESERVATIONCHOIXEQUIPEMENT_H
 
 #include <QMainWindow>
+#include "BDD.h"
 
 namespace Ui {
 class IHM_CreerReservationChoixEquipement;
@@ -12,7 +13,7 @@ class IHM_CreerReservationChoixEquipement : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit IHM_CreerReservationChoixEquipement(QWidget *parent = 0);
+    explicit IHM_CreerReservationChoixEquipement(BDD *b,QWidget *parent = 0);
     ~IHM_CreerReservationChoixEquipement();
 
 private:

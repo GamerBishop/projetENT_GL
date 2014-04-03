@@ -1,7 +1,7 @@
 #include "ihm_creerreservationchoixequipement.h"
 #include "ui_ihm_creerreservationchoixequipement.h"
 
-IHM_CreerReservationChoixEquipement::IHM_CreerReservationChoixEquipement(QWidget *parent) :
+IHM_CreerReservationChoixEquipement::IHM_CreerReservationChoixEquipement(BDD *b,QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::IHM_CreerReservationChoixEquipement)
 {
