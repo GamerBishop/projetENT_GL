@@ -30,6 +30,10 @@ public slots:
     void retourEquipement();
     void retourSalle();
     void retourIHMSuivante();
+
+private slots:
+    void on_button_ok_clicked();
+    void on_button_ajout_clicked();
 };
 
 #endif // IHM_CONSULTERRESERVATIONS_H

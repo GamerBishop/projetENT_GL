@@ -17,6 +17,7 @@ public:
     BDD(){}
     QSqlDatabase db;
     bool Connexion(QString login, QString password);
+    bool DeleteReservationParDateEtSalle(QString batiment,QString numsalle, QString date);
     QString SelectReservationsParDateEtSalle(QString batiment,QString numsalle, QString date);
     QList<QList<QString> > selectSalleVide(QString date,QString typesalle,QString promotion,QString groupe,QString hdebut,QString duree);
     void creerReservationSalle(QString date, QString hdebut, QString duree, QString salleid, QString typecours, QString profNom, QString profPrenom, QString ue, QString groupeid);

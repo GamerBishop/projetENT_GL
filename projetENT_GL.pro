@@ -9,25 +9,30 @@ QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = projetENT_GL
-TEMPLATE = app
 QMAKE_CXXFLAGS += -std=c++1y
 
+TARGET = projetENT_GL
+TEMPLATE = app
+
+
 SOURCES += main.cpp\
-    mainwindow.cpp \
-    BDD.cpp \
+        mainwindow.cpp\
+        BDD.cpp \
+    bdd.cpp \
+    consulteplanning.cpp \
+    consulterplanningequipement2allusers.cpp \
+    ConsulterPlanningSalle2AllUsers.cpp \
+    ConsulterReservation2SU.cpp \
+    creerreservationsalle.cpp \
+    creerreservationsallesu.cpp \
+    creerresevationsalle.cpp \
     ihm_choixprof.cpp \
+    ihm_consulterplanning.cpp \
     ihm_consulterreservations.cpp \
     ihm_creerreservationchoixequipement.cpp \
     ihm_creerreservationchoixsalle.cpp \
     ihm_creerreservationequipement.cpp \
-    ihm_creerreservationequipementSU.cpp \
-    ConsulterPlanningSalle2AllUsers.cpp \
-    consulterplanningequipement2allusers.cpp \
-    creerreservationsalle.cpp \
-    creerreservationsallesu.cpp \
-    ihm_consulterplanning.cpp
-
+    ihm_creerreservationequipementSU.cpp
 
 HEADERS  += mainwindow.h \
     Cours.h \
@@ -43,37 +48,41 @@ HEADERS  += mainwindow.h \
     TypeGroupe.h \
     TypeSalle.h \
     UniteEnseignement.h \
-    consulteplanning.h\
     BDD.h \
+    bdd.h \
+    consulteplanning.h \
+    consulterplanningequipement2allusers.h \
+    ConsulterPlanningSalle2AllUsers.h \
+    ConsulterReservation2SU.h \
+    creerreservationsalle.h \
+    creerreservationsallesu.h \
+    creerresevationsalle.h \
     ihm_choixprof.h \
+    ihm_consulterplanning.h \
     ihm_consulterreservations.h \
     ihm_creerreservationchoixequipement.h \
     ihm_creerreservationchoixsalle.h \
     ihm_creerreservationequipement.h \
-    ihm_creerreservationequipementSU.h \
-    ConsulterPlanningSalle2AllUsers.h \
-    consulterplanningequipement2allusers.h \
-    creerreservationsalle.h \
-    creerreservationsallesu.h \
-    ihm_consulterplanning.h
-	
+    ihm_creerreservationequipementSU.h
+
 
 FORMS    += mainwindow.ui \
+    consulteplanning.ui \
+    consulterPlanning.ui \
+    consulterplanningequipement2allusers.ui \
+    ConsulterPlanningSalle2AllUsers.ui \
+    ConsulterReservation2SU.ui \
+    creerreservationsalle.ui \
+    creerreservationsallesu.ui \
+    creerresevationsalle.ui \
     ihm_choixprof.ui \
+    ihm_consulterplanning.ui \
     ihm_consulterreservations.ui \
     ihm_creerreservationchoixequipement.ui \
     ihm_creerreservationchoixsalle.ui \
     ihm_creerreservationequipement.ui \
-    ihm_creerreservationequipementSU.ui \
-    ConsulterPlanningSalle2AllUsers.ui \
-    consulterplanningequipement2allusers.ui \
-    creerreservationsalle.ui \
-    creerreservationsallesu.ui \
-    ihm_consulterplanning.ui
+    ihm_creerreservationequipementSU.ui
 
 OTHER_FILES += \
     Drivers (lire readme).zip \
-    projetENT_GL.pro.user \
-    projetENT_GL.pro.user.1.3 \
-    projetENT_GL.pro.user.8193733 \
     README.md

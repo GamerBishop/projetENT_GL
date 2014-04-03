@@ -245,6 +245,21 @@ QList<QList<QString> > BDD::selectSalleVide(QString date,QString typesalle,QStri
     return result;
 }
 
+bool BDD::DeleteReservationParDateEtSalle(QString batiment,QString numsalle, QString date)
+{
+    QSqlQuery requeteur;
+    requeteur.prepare("DELETE FROM cours "
+                      "Where Date =:date "
+                      "And salleid= (Select from salle where numsalle = :numsalle and batiment = :batiment);");
+    requeteur.bindValue(":date",date);
+    requeteur.bindValue(":salle",numsalle);
+    requeteur.bindValue(":batiment",batiment);
+    requeteur.exec();
+    if(requeteur.size()==0)
+        return false;
+    return true;
+}
+
 QString BDD::SelectReservationsParDateEtSalle(QString batiment,QString numsalle, QString date)
 {
     QList<QList<QString> > result;
