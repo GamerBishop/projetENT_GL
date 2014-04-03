@@ -43,14 +43,14 @@
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="button_retour">
           <property name="text">
            <string>Retour</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="button_retour_2">
           <property name="text">
            <string>Choisir</string>
           </property>

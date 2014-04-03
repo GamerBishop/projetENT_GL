@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreerResevationSalle</class>
+ <widget class="QMainWindow" name="CreerResevationSalle">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>610</width>
+    <height>401</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="7" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_duree">
+          <property name="text">
+           <string>Durée :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTimeEdit" name="time_label_duree"/>
+        </item>
+       </layout>
+      </item>
+      <item row="4" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_heure_debut">
+          <property name="text">
+           <string>Heure de début :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTimeEdit" name="time_heure_debut"/>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCalendarWidget" name="calendar"/>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="2">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="2" column="1">
+         <widget class="QFontComboBox" name="combo_ue"/>
+        </item>
+        <item row="11" column="1">
+         <widget class="QFontComboBox" name="combo_groupe"/>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="label_promotion">
+          <property name="text">
+           <string>Promotion :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <widget class="QLabel" name="label_groupe">
+          <property name="text">
+           <string>Groupe :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QFontComboBox" name="combo_promotion"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_ue">
+          <property name="text">
+           <string>Unité D'enseignement :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_type_cours">
+          <property name="text">
+           <string>Type de Cours :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QFontComboBox" name="combo_type_cours"/>
+        </item>
+        <item row="0" column="1">
+         <widget class="QFontComboBox" name="combo_type_salle"/>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_type_salle">
+          <property name="text">
+           <string>Type de Salle :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="1">
+         <widget class="QFontComboBox" name="combo_prof_sup"/>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLabel" name="label_prof_sup">
+          <property name="text">
+           <string>Professeur(s) Supplémentaire(s) :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="1">
+         <widget class="QPushButton" name="buton_add_prof">
+          <property name="text">
+           <string>Ajouter</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="butto_ok">
+        <property name="text">
+         <string>OK</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+   <widget class="QWidget" name="layoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>30</y>
+      <width>123</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_ok">
+       <property name="text">
+        <string>OK</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>610</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

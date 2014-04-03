@@ -146,28 +146,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>640</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuSalle">
-    <property name="title">
-     <string>Salle</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuEquipement">
-    <property name="title">
-     <string>Equipement</string>
-    </property>
-   </widget>
-   <addaction name="menuSalle"/>
-   <addaction name="menuEquipement"/>
-  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
