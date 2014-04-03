@@ -15,7 +15,6 @@ QMAKE_CXXFLAGS += -std=c++1y
 
 SOURCES += main.cpp\
     mainwindow.cpp \
-    consulteplanning.cpp \
     BDD.cpp \
     ihm_choixprof.cpp \
     ihm_consulterreservations.cpp \
@@ -23,7 +22,11 @@ SOURCES += main.cpp\
     ihm_creerreservationchoixsalle.cpp \
     ihm_creerreservationequipement.cpp \
     ihm_creerreservationequipementSU.cpp \
-    ConsulterReservation2AllUsers.cpp
+    ConsulterPlanningSalle2AllUsers.cpp \
+    consulterplanningequipement2allusers.cpp \
+    creerreservationsalle.cpp \
+    creerreservationsallesu.cpp \
+    ihm_consulterplanning.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -48,15 +51,29 @@ HEADERS  += mainwindow.h \
     ihm_creerreservationchoixsalle.h \
     ihm_creerreservationequipement.h \
     ihm_creerreservationequipementSU.h \
-    ConsulterReservation2AllUsers.h
+    ConsulterPlanningSalle2AllUsers.h \
+    consulterplanningequipement2allusers.h \
+    creerreservationsalle.h \
+    creerreservationsallesu.h \
+    ihm_consulterplanning.h
 	
 
 FORMS    += mainwindow.ui \
-    consulteplanning.ui \
     ihm_choixprof.ui \
     ihm_consulterreservations.ui \
     ihm_creerreservationchoixequipement.ui \
     ihm_creerreservationchoixsalle.ui \
     ihm_creerreservationequipement.ui \
     ihm_creerreservationequipementSU.ui \
-    ConsulterReservation2AllUsers.ui
+    ConsulterPlanningSalle2AllUsers.ui \
+    consulterplanningequipement2allusers.ui \
+    creerreservationsalle.ui \
+    creerreservationsallesu.ui \
+    ihm_consulterplanning.ui
+
+OTHER_FILES += \
+    Drivers (lire readme).zip \
+    projetENT_GL.pro.user \
+    projetENT_GL.pro.user.1.3 \
+    projetENT_GL.pro.user.8193733 \
+    README.md

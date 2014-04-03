@@ -1,11 +1,11 @@
-#include "ConsulterReservation2AllUsers.h"
-#include "ui_ConsulterReservation2AllUsers.h"
+#include "ConsulterPlanningSalle2AllUsers.h"
+#include "ui_ConsulterPlanningSalle2AllUsers.h"
 #include <QString>
 using namespace std;
 
-ConsulterReservation2AllUsers::ConsulterReservation2AllUsers(BDD *b,QString salle, QString batiment, QWidget *parent) :
+ConsulterPlanningSalle2AllUsers::ConsulterPlanningSalle2AllUsers(BDD *b,QString salle, QString batiment, QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::ConsulterReservation2AllUsers)
+    ui(new Ui::ConsulterPlanningSalle2AllUsers)
 {
     this->batiment=batiment;
     this->salle=salle;
@@ -25,12 +25,12 @@ ConsulterReservation2AllUsers::ConsulterReservation2AllUsers(BDD *b,QString sall
 
  }
 
-ConsulterReservation2AllUsers::~ConsulterReservation2AllUsers()
+ConsulterPlanningSalle2AllUsers::~ConsulterPlanningSalle2AllUsers()
 {
     delete ui;
 }
 
-void ConsulterReservation2AllUsers::on_calendar_clicked(const QDate &date)
+void ConsulterPlanningSalle2AllUsers::on_calendar_clicked(const QDate &date)
 {
     QDate  today = date;
     QDate tomorrow = date.addDays(1);

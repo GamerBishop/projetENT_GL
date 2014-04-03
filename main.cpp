@@ -1,18 +1,15 @@
-#include "BDD.h"
 #include "mainwindow.h"
-#include <QMessageBox>
-
-#include "ConsulterReservation2AllUsers.h"
-
-#include "IHM_CreerReservationEquipementSU.h"
+#include "IHM_ChoixProf.h"
+#include "BDD.h"
 #include <QApplication>
-#include <QPluginLoader>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    BDD* b=new BDD("localhost","EDT","postgres","root");
-    ConsulterReservation2AllUsers * w = new ConsulterReservation2AllUsers(b,"P136","Pascal");
+    BDD * bdd = new BDD("localhost","EDT","postgres","root");
+    //BDD * bdd = new BDD();
+    MainWindow * w=new MainWindow(bdd,0);
     w->show();
+
     return a.exec();
 }

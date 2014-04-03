@@ -2,7 +2,9 @@
 #define IHM_CONSULTERRESERVATIONS_H
 
 #include <QMainWindow>
-
+#include "ihm_creerreservationequipement.h"
+#include "creerreservationsalle.h"
+#include "BDD.h"
 namespace Ui {
 class IHM_ConsulterReservations;
 }
@@ -12,11 +14,22 @@ class IHM_ConsulterReservations : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit IHM_ConsulterReservations(QWidget *parent = 0);
+    explicit IHM_ConsulterReservations(BDD *bdd,bool focusSalle,QWidget *parent = 0);
     ~IHM_ConsulterReservations();
+    IHM_CreerReservationEquipement * ihm_resEquipement;
+    CreerReservationSalle *ihm_resSalle;
 
 private:
     Ui::IHM_ConsulterReservations *ui;
+    BDD * bdd;
+signals:
+    void signalRetour(bool salle);
+public slots:
+    void reserverEquipement();
+    void reserverSalle();
+    void retourEquipement();
+    void retourSalle();
+    void retourIHMSuivante();
 };
 
 #endif // IHM_CONSULTERRESERVATIONS_H
