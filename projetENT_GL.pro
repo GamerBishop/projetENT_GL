@@ -24,8 +24,8 @@ SOURCES += main.cpp\
     ihm_creerreservationequipement.cpp \
     ihm_creerreservationequipementSU.cpp \
     ConsulterReservation2AllUsers.cpp \
-    ConsulterReservation2SU.cpp \
-    creerresevationsalle.cpp
+    creerresevationsalle.cpp \
+    consulterreservation2su.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -51,8 +51,8 @@ HEADERS  += mainwindow.h \
     ihm_creerreservationequipement.h \
     ihm_creerreservationequipementSU.h \
     ConsulterReservation2AllUsers.h \
-    ConsulterReservation2SU.h \
-    creerresevationsalle.h
+    creerresevationsalle.h \
+    consulterreservation2su.h
 	
 
 FORMS    += mainwindow.ui \
@@ -65,8 +65,8 @@ FORMS    += mainwindow.ui \
     ihm_creerreservationequipementSU.ui \
     ConsulterReservation2AllUsers.ui \
     consulterPlanning.ui \
-    ConsulterReservation2SU.ui \
-    creerresevationsalle.ui
+    creerresevationsalle.ui \
+    consulterreservation2su.ui
 
 OTHER_FILES += \
     Drivers (lire readme).zip \

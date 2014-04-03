@@ -3,6 +3,8 @@
 #include <QMessageBox>
 
 #include "ConsulterReservation2AllUsers.h"
+#include "consulterreservation2su.h"
+#include "creerresevationsalle.h"
 
 #include "IHM_CreerReservationEquipementSU.h"
 #include <QApplication>
@@ -11,8 +13,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    BDD* b=new BDD("10.7.36.4","EDT","postgres","root");
-    ConsulterReservation2AllUsers * w = new ConsulterReservation2AllUsers(b,"P136","Pascal");
+    //BDD* b=new BDD("10.7.36.4","EDT","postgres","root");
+    ConsulterReservation2SU * w = new ConsulterReservation2SU();
     w->show();
     return a.exec();
 }

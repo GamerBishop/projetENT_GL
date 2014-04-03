@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::IHM_ConsulterReservations *ui;
+
+private slots:
+    void on_button_ok_clicked();
+    void on_button_ajout_clicked();
 };
 
 #endif // IHM_CONSULTERRESERVATIONS_H
