@@ -1,7 +1,8 @@
 #include "consulterreservation2su.h"
 #include "ui_consulterreservation2su.h"
 
-ConsulterReservation2SU::ConsulterReservation2SU(QWidget *parent) :
+
+ConsulterReservation2SU::ConsulterReservation2SU(BDD *b,QString salle, QString batiment, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::ConsulterReservation2SU)
 {
@@ -60,9 +61,9 @@ void ConsulterReservation2SU::on_button_suppr_demain_cours_clicked()
 
 void ConsulterReservation2SU::on_button_ajout_clicked()
 {
-   creerReserv = new CreerResevationSalle();
+   creerReservSalle = new CreerReservationSalleSU(b,this);
 
-   creerReserv->show();
+   creerReservSalle->show();
    this->hide();
 
 }

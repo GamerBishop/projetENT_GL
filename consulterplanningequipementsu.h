@@ -14,7 +14,7 @@ class ConsulterPlanningEquipementSU : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ConsulterPlanningEquipementSU(BDD *b, QString nomEquipement,QWidget *parent);
+    explicit ConsulterPlanningEquipementSU(BDD *b, QString nomEquipement,QWidget *parent=0);
     ~ConsulterPlanningEquipementSU();
 
 private slots:

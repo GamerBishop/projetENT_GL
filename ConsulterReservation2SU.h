@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "BDD.h"
-#include "creerresevationsalle.h"
+#include "creerreservationsallesu.h"
 
 namespace Ui {
 class ConsulterReservation2SU;
@@ -14,7 +14,7 @@ class ConsulterReservation2SU : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ConsulterReservation2SU(QWidget *parent = 0);
+    explicit ConsulterReservation2SU(BDD *b,QString salle, QString batiment, QWidget *parent=0);
     ~ConsulterReservation2SU();
 
 private slots:
@@ -33,7 +33,7 @@ private:
     QString batiment;
     QString salle;
     Ui::ConsulterReservation2SU *ui;
-    CreerResevationSalle *creerReserv;
+    CreerReservationSalleSU*creerReservSalle;
     QDate today;
     QDate tomorrow;
 };
