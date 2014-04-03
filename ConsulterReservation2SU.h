@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "BDD.h"
-#include "creerresevationsalle.h"
+#include "creerreservationsalle.h"
 
 namespace Ui {
 class ConsulterReservation2SU;
@@ -33,7 +33,7 @@ private:
     QString batiment;
     QString salle;
     Ui::ConsulterReservation2SU *ui;
-    CreerResevationSalle *creerReserv;
+    CreerReservationSalle *creerReserv;
     QDate today;
     QDate tomorrow;
 };

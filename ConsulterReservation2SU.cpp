@@ -60,7 +60,7 @@ void ConsulterReservation2SU::on_button_suppr_demain_cours_clicked()
 
 void ConsulterReservation2SU::on_button_ajout_clicked()
 {
-   creerReserv = new CreerResevationSalle();
+   creerReserv = new CreerReservationSalle(this->b);
 
    creerReserv->show();
    this->hide();

@@ -9,7 +9,7 @@ IHM_ConsulterPlanning::IHM_ConsulterPlanning(BDD * bdd,bool focusSalle, QWidget 
     this->bdd=bdd;
     if(focusSalle){
         ui->tabWidget->setCurrentWidget(ui->tabSalle);
-        QList<QList<QString> > tab=bdd->;
+        QList<QList<QString> > tab=bdd->selectSalle();
         for (int i=0;i<tab.count();i++)
             for(int j=0;j<tab[i].count();j++)
             {
